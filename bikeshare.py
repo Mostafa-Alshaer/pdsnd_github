@@ -221,14 +221,14 @@ def user_stats(df, city):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # Display counts of user types
+    # calculate and display counts of user types
     try:
         user_types_counts = df['User Type'].value_counts()
         print(f'The user types counts are:\n {user_types_counts}')
     except:
         print('An error happened, while getting and displaying the counts of user types.')
     
-    # Display counts of gender, gender not exist for all cities, so will check if it exist beofre getting counts
+    # calculate and display counts of gender, but gender not exist for all cities, so will check if it exist beofre getting counts
     try:
         if 'Gender' in df.columns:
             gender_counts = df['Gender'].value_counts()
@@ -238,7 +238,7 @@ def user_stats(df, city):
     except:
         print('An error happened, while getting and displaying the counts of gender.')
 
-    # Display earliest, most recent, and most common year of birth
+    # calculate and display earliest, most recent, and most common year of birth
     # Note: year of birth not exist for all cities, so will check if it exist beofre getting earliest, most recent, and most common
     try:
         if 'Birth Year' in df.columns:
