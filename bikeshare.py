@@ -264,20 +264,20 @@ def user_stats(df, city):
 def display_raw_data(df):
     """Displays raw data 5 by 5, till we reach to the end of the df, or till the user want to stop."""
     
-    # put the initail data for start row, and end row
+    # put the initial data for start row, and end row
     start_row_index = 0
     end_row_index = 5
     
     # get the length of the dataframe 
     dataframe_length = df.shape[0]
     
-    # keep getting 5 by 5 till we reach to the end of the df, or till the user want to stop.
+    # keep getting 5 by 5 till we reach to the end of the df, or till the user don't want to see more.
     while True:
-        # check if the user would like to see next 5 lines, if no break.
+        # check if the user would like to see more 5 lines, if no break.
         user_input = input('Would you like to see the next 5 lines of raw data?\n[yes or no]:').lower()
         if user_input == 'no':
             break
-        # if start out of boundery: break 
+        # if start out of boundary: break
         if start_row_index >= dataframe_length:
             print('There is no more rows to display')
             break;
