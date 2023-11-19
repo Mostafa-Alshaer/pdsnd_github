@@ -22,7 +22,7 @@ def get_user_input(value_name, valid_values):
         df - the valid value user enter
     """
     # we used while to keep taking value from user till a valid one is entered
-    while( True ):
+    while True:
         value = input(f'Please enter the {value_name} you want to search in:').lower()
         if value in valid_values:
             return value
