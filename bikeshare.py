@@ -1,6 +1,5 @@
 import time
 import pandas as pd
-import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -23,7 +22,7 @@ def get_user_input(value_name, valid_values):
         df - the valid value user enter
     """
     # we used while to keep taking value from user till a valid one is entered
-    while( True ):
+    while True:
         value = input(f'Please enter the {value_name} you want to search in:').lower()
         if value in valid_values:
             return value
@@ -79,7 +78,7 @@ def get_filters():
     day = get_user_input('day', valid_days_inputs)
 
     # print separator and return user inputs
-    print('-'*50)
+    print('-'*60)
     return city, month, day
 
 
@@ -157,7 +156,7 @@ def time_stats(df, month, day):
         print('An error happened, while getting and displaying the most common start hour.')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 def station_stats(df):
@@ -188,7 +187,7 @@ def station_stats(df):
         print('An error happened, while getting and displaying the most frequent combination of start station and end station trip.')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 def trip_duration_stats(df):
@@ -212,7 +211,7 @@ def trip_duration_stats(df):
         print('An error happened, while getting and displaying the mean travel time.')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
 
 def user_stats(df, city):
@@ -258,7 +257,7 @@ def user_stats(df, city):
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*60)
 
     
 def display_raw_data(df):
